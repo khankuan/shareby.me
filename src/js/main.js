@@ -43,7 +43,7 @@ function handleHostClickDone(e){
 
 
 function handleHostClick(){
-  if (!document.getElementById('user')){
+  if (!user.skylink){
     document.getElementById('inputFile').click();
   }
 }
