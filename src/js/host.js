@@ -82,5 +82,5 @@ function updateHost(){
 
 
 function hostSetMessage(message){
-  document.getElementById('host').innerHTML = '<span>Host ' + message + '<br>Drop more files..</span>';
+  document.getElementById('host').innerHTML = '<span>Host ' + message + '<br>Drop or click for more files..</span>';
 }

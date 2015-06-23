@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   document.body.addEventListener("dragover", prevent, false);
   document.body.addEventListener("dragleave", prevent, false);
   document.body.addEventListener("drop", makeSessionHost, false);
+  document.body.addEventListener("click", handleHostClick, false);
+  document.getElementById('inputFile').addEventListener('change', handleHostClickDone)
 });
 
 
@@ -34,11 +36,24 @@ function makeSessionHost(e){
 }
 
 
+function handleHostClickDone(e){
+  makeSessionHost(e);
+  e.target.value = '';
+}
+
+
+function handleHostClick(){
+  if (!document.getElementById('user')){
+    document.getElementById('inputFile').click();
+  }
+}
+
+
 
 function makeSessionUser(){
   var userElement = document.createElement('div');
   userElement.id = 'user';
-  userElement.innerHTML = '<span>Drop some files or wait for others..</span>';
+  userElement.innerHTML = '<span>Drop or click for some files or wait for others..</span>';
 
   document.body.appendChild(userElement);
   userStartListening();
